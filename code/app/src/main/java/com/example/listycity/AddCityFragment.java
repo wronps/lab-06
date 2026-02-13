@@ -12,8 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import com.example.listycity.City;
-
 public class AddCityFragment extends DialogFragment {
     interface AddCityDialogListener {
         void addCity(City city);
@@ -48,7 +46,7 @@ public class AddCityFragment extends DialogFragment {
         final boolean isEditing = args != null && args.containsKey("city");
         final City cityToEdit = isEditing ? (City) args.getSerializable("city") : null;
         if (isEditing && cityToEdit != null) {
-            editCityName.setText(cityToEdit.getName());
+            editCityName.setText(cityToEdit.getCityName());
             editProvinceName.setText(cityToEdit.getProvince());
         }
 

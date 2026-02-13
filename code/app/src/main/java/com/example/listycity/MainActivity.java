@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements
     private CityArrayAdapter cityAdapter;
     @Override
     public void onEditCity(City city, String newName, String newProvince) {
-        city.setName(newName);
+        city.setCityName(newName);
         city.setProvince(newProvince);
         cityAdapter.notifyDataSetChanged();
     }

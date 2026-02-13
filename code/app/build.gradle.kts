@@ -4,14 +4,14 @@ plugins {
 
 android {
     namespace = "com.example.listycity"
-    compileSdk {
-        version = release(36)
+    compileSdk = 35
+    tasks.withType<Test>{
+        useJUnitPlatform()
     }
-
     defaultConfig {
         applicationId = "com.example.listycity"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -28,8 +28,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
@@ -41,4 +41,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.2")
+    //implementation(files("/Users/wronps/Library/Android/sdk/platforms/android-35/android.jar"))
 }

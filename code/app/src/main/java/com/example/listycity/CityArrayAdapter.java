@@ -30,7 +30,7 @@ public class CityArrayAdapter extends ArrayAdapter<City> {
         City city = getItem(position);
         TextView cityName = view.findViewById(R.id.city_text);
         TextView provinceName = view.findViewById(R.id.province_text);
-        cityName.setText(city.getName());
+        cityName.setText(city.getCityName());
         provinceName.setText(city.getProvince());
         return view;
     }
